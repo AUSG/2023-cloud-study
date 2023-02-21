@@ -23,9 +23,9 @@
    ```
 
 ```bash
-PRINCIPAL_ARN=$(aws sts get-caller-identity --query Arn --output text --profile junho)
+PRINCIPAL_ARN=$(aws sts get-caller-identity --query Arn --output text --profile ausg-jun)
 
-AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text --profile junho)
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text --profile ausg-jun)
 
 export PRINCIPAL_ARN
 export AWS_ACCOUNT_ID
@@ -78,3 +78,11 @@ ROLE_ARN=$(aws iam create-role --role-name AWSCookbook101Role --assume-role-poli
 ```bash
 aws iam attach-role-policy --role-name AWSCookbook101Role --policy-arn arn:aws:iam::aws:policy/PowerUserAccess --profile junho
 ```
+
+## 1.2 액세스 패턴을 기반으로 최소 권한 IAM 권한 생성
+
+IAM Access Analyzer를 사용해 AWS 계정의 Cloud Trail 활동을 기반으로 정책 생성
+
+1. CloudTrail 서비스 접속, 추적 생성
+2. IAM 사용자 > 페이지 최하단 **정책 생성** 버튼 클릭
+3. 리전을 선택하고 최종 생성
