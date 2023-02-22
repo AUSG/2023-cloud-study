@@ -29,22 +29,22 @@ PRINCIPAL_ARN=$(aws sts get-caller-identity --query Arn --output text)
 
 ```bash
 sed -e "s|PRINCIPAL_ARN|${PRINCIPAL_ARN}|g" \
-assume-role-policy-template.json > assume-role-policy.json
+  assume-role-policy-template.json > assume-role-policy.json
 ```
 
 #### ④ 위 정책 파일로 `AWSCookbook101Role` 역할 생성
 
 ```bash
 ROLE_ARN=$(aws iam create-role --role-name AWSCookbook101Role \
---assume-role-policy-document file://assume-role-policy.json \
---output text --query Role.Arn
+  --assume-role-policy-document file://assume-role-policy.json \
+  --output text --query Role.Arn
 ```
 
 #### ⑤ `PowerUserAccess` 정책을 역할에 연결
 
 ```bash
 aws iam attach-iam-policy --role-name AWSCookbook101Role \
---policy-arn arn:aws:iam::aws:policy/PowerUserAccess
+  --policy-arn arn:aws:iam::aws:policy/PowerUserAccess
 ```
 
 ---
@@ -53,5 +53,5 @@ aws iam attach-iam-policy --role-name AWSCookbook101Role \
 
 ```bash
 aws sts assume-role --role-arn $ROLE_ARN \
---role-session-name AWSCookbook101
+  --role-session-name AWSCookbook101
 ```
