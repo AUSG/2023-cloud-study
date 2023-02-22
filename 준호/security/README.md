@@ -68,7 +68,7 @@ sed -e "s|PRINCIPAL_ARN|${PRINCIPAL_ARN}|g" assume-role-policy-template.json > a
 `assume-role-policy.json` 이라는 파일에 적어둔 arn을 불러와서 환경변수로 저장
 
 ```bash
-ROLE_ARN=$(aws iam create-role --role-name AWSCookbook101Role --assume-role-policy-document  file://assume-role-policy.json --output text --query Role.Arn --profile junho)
+ROLE_ARN=$(aws iam create-role --role-name AWSCookbook101Role --assume-role-policy-document  file://assume-role-policy.json --output text --query Role.Arn)
 ```
 
 ```bash
