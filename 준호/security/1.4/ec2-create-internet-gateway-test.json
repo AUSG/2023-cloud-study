@@ -1,0 +1,11 @@
+{
+    "EvaluationResults": [
+        {
+            "EvalActionName": "ec2:CreateInternetGateway",
+            "EvalResourceName": "*",
+            "EvalDecision": "implicitDeny",
+            "MatchedStatements": [],
+            "MissingContextValues": []
+        }
+    ]
+}

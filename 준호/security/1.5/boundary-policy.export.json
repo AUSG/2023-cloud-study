@@ -1,0 +1,14 @@
+{
+    "Policy": {
+        "PolicyName": "AWSCookbook105PB",
+        "PolicyId": "ANPAXQC23DYJBKPBU5FS5",
+        "Arn": "arn:aws:iam::515586596370:policy/AWSCookbook105PB",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 0,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2023-02-22T09:43:09+00:00",
+        "UpdateDate": "2023-02-22T09:43:09+00:00"
+    }
+}
