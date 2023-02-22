@@ -24,11 +24,7 @@
 
 ```bash
 PRINCIPAL_ARN=$(aws sts get-caller-identity --query Arn --output text --profile ausg-jun)
-
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text --profile ausg-jun)
-
-export PRINCIPAL_ARN
-export AWS_ACCOUNT_ID
 ```
 
 로컬 환경변수를 확인해요
