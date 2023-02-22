@@ -1,0 +1,10 @@
+{
+    "InstanceProfile": {
+        "Path": "/",
+        "InstanceProfileName": "AWSCookbook106InstanceProfile",
+        "InstanceProfileId": "AIPAXQC23DYJPE6RVQZ77",
+        "Arn": "arn:aws:iam::515586596370:instance-profile/AWSCookbook106InstanceProfile",
+        "CreateDate": "2023-02-22T10:27:34+00:00",
+        "Roles": []
+    }
+}
