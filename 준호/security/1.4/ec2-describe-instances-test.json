@@ -1,0 +1,24 @@
+{
+    "EvaluationResults": [
+        {
+            "EvalActionName": "ec2:describeInstances",
+            "EvalResourceName": "*",
+            "EvalDecision": "allowed",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "AmazonEC2ReadOnlyAccess",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 3,
+                        "Column": 17
+                    },
+                    "EndPosition": {
+                        "Line": 8,
+                        "Column": 6
+                    }
+                }
+            ],
+            "MissingContextValues": []
+        }
+    ]
+}

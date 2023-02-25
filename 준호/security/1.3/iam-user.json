@@ -1,0 +1,9 @@
+{
+    "User": {
+        "Path": "/",
+        "UserName": "awscookbook103user",
+        "UserId": "AIDAXQC23DYJPUDLGSGIQ",
+        "Arn": "arn:aws:iam::515586596370:user/awscookbook103user",
+        "CreateDate": "2023-02-21T23:53:07+00:00"
+    }
+}
