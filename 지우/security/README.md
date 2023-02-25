@@ -10,7 +10,7 @@
 
 105: 권한 경계를 사용한 IAM 관리 기능 위임
 
-106: AWS SSM Manager를 사용해 EC2 인스턴스에 연결
+106: AWS SSM Session Manager를 사용해 EC2 인스턴스에 연결
 
 107: KMS 키를 사용해 EBS 볼륨 암호화
 
