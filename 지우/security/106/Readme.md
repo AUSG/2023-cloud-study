@@ -1,4 +1,4 @@
-# 1.6 AWS SSM Session Manager
+# 1.6 AWS SSM Session Manager를 사용해 EC2 인스턴스에 연결
 
 > _ssh를 사용하지 않고 private subnet에 배포된 EC2 인스턴스에 연결_
 
