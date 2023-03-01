@@ -1,4 +1,4 @@
-## 2. Network
+## 2. Network 용어정리
 
 ### AWS VPC(Virtual Private Cloud)
 
@@ -54,3 +54,15 @@ IGW는 인터넷 게이트웨이(Internet Gateway)의 약어입니다.
 인터넷 게이트웨이는 Amazon VPC(Virtual Private Cloud)에서 인터넷과 통신하기 위한 게이트웨이로, VPC 내부의 인스턴스나 다른 리소스가 인터넷과 통신할 수 있도록 합니다.
 
 이를 위해 VPC 내부에서 라우팅 테이블(Route Table)을 구성하여 인터넷 게이트웨이를 목적지로 설정해야 합니다. IGW는 VPC당 하나만 생성할 수 있으며, 사용한 데이터 전송량과 연결 시간에 대한 요금이 부과됩니다.
+
+## 2.4장
+
+### NAT(Network Address Translation)
+
+NAT(Network Address Translation)는 사설 네트워크와 공인 네트워크 간의 통신을 위해 사용되는 기술로, 사설 IP 주소와 공인 IP 주소 간의 변환을 수행합니다.
+
+NAT는 사설 IP 주소를 사용하는 네트워크에서 인터넷과 연결할 때 사용됩니다. 이때 NAT 게이트웨이를 사용하여 사설 IP 주소를 공인 IP 주소로 변환하고, 인터넷과 통신을 수행합니다. NAT를 사용하면 한정된 공인 IP 주소를 효율적으로 활용할 수 있으며, 내부 네트워크를 외부에서 보호할 수 있습니다.
+
+NAT 게이트웨이는 두 가지 유형이 있습니다. 첫 번째는 NAT 인스턴스(NAT Instance)로, Amazon EC2 인스턴스를 사용하여 구성할 수 있습니다. 두 번째는 NAT 게이트웨이(NAT Gateway)로, 이는 완전히 관리되는 서비스로써 NAT 인스턴스와 달리 더 높은 처리량 및 가용성을 제공합니다.
+
+NAT 게이트웨이는 Amazon VPC에서 사용됩니다. VPC 내에서 NAT 게이트웨이를 사용하여 VPC 내부의 인스턴스가 인터넷과 통신할 수 있도록 하며, VPC 내부의 인스턴스를 외부에서 보호합니다. 이때 NAT 게이트웨이를 사용하기 위해서는 VPC 내부에서 라우팅 테이블(Route Table)을 구성하여 NAT 게이트웨이를 목적지로 설정해야 합니다.
