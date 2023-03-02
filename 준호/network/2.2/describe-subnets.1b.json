@@ -1,0 +1,33 @@
+{
+    "Subnets": [
+        {
+            "AvailabilityZone": "us-east-1b",
+            "AvailabilityZoneId": "use1-az1",
+            "AvailableIpAddressCount": 251,
+            "CidrBlock": "10.10.1.0/24",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-0119e62280bf3f479",
+            "VpcId": "vpc-0fa8f2aebf4ff6629",
+            "OwnerId": "515586596370",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "AWSCookbook202a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:515586596370:subnet/subnet-0119e62280bf3f479",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            }
+        }
+    ]
+}

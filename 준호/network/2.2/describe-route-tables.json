@@ -1,0 +1,47 @@
+{
+    "RouteTables": [
+        {
+            "Associations": [
+                {
+                    "Main": true,
+                    "RouteTableAssociationId": "rtbassoc-040b62992f19ab336",
+                    "RouteTableId": "rtb-0057aefa3b0a8b60a",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                },
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0469d5aa73864240b",
+                    "RouteTableId": "rtb-0057aefa3b0a8b60a",
+                    "SubnetId": "subnet-0f2a819de2b7b93bb",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                },
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0a124d4114619c79c",
+                    "RouteTableId": "rtb-0057aefa3b0a8b60a",
+                    "SubnetId": "subnet-0119e62280bf3f479",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-0057aefa3b0a8b60a",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.10.0.0/23",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                }
+            ],
+            "Tags": [],
+            "VpcId": "vpc-0fa8f2aebf4ff6629",
+            "OwnerId": "515586596370"
+        }
+    ]
+}
