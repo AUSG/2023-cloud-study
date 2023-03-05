@@ -1,0 +1,10 @@
+{
+    "Id": "awscookbook302",
+    "Status": "Enabled",
+    "Tierings": [
+        {
+            "Days": 90,
+            "AccessTier": "ARCHIVE_ACCESS"
+        }
+    ]
+}
