@@ -35,3 +35,15 @@ AWS의 스토리지 서비스는 다른 AWS 서비스와 통합해 애플리케�
 - `Intelligent-Tiering 구성`: Intelligent-Tiering 구성은 데이터 액세스 패턴에 따라 자동으로 객체를 다른 클래스로 이동시켜 최적화된 비용으로 데이터를 저장하는 기능입니다. Intelligent-Tiering은 데이터 액세스 패턴에 따라 자동으로 객체를 S3 Standard 및 S3 Standard-IA 클래스 중 하나로 이동시키거나, S3 Glacier 또는 S3 Glacier Deep Archive 클래스로 이동시킵니다. 이 구성을 사용하면 객체 액세스 및 복원에 대한 요금을 지불할 필요없이 자동으로 데이터 저장소를 최적화할 수 있습니다.
 
 - 따라서, S3 아카이브 구성은 주로 오랫동안 데이터를 보관하고, 자주 액세스하지 않을 때 사용하며, Intelligent-Tiering 구성은 데이터 액세스 패턴에 따라 자동으로 최적화된 클래스로 이동시켜 비용을 절감할 때 사용됩니다.
+
+**AWS Backup Volt**
+
+- AWS Backup Vault는 AWS에서 제공하는 클라우드 백업 서비스입니다. AWS Backup Vault를 사용하면 AWS에서 호스팅되는 다양한 서비스의 데이터를 쉽게 백업하고 보호할 수 있습니다.
+
+- AWS Backup Vault는 S3, EBS, RDS, DynamoDB, EFS 등 AWS의 다른 서비스와 연동하여 백업을 수행합니다. 백업 주기, 보존 기간, 태그 및 알림을 구성할 수 있습니다.
+
+- 또한, AWS Backup Vault는 기존 백업 관리 시스템과의 통합을 위한 API와 CLI를 제공하여 사용자가 AWS Backup Vault를 자동화할 수 있도록 도와줍니다.
+
+- AWS Backup Vault는 데이터 보관에 대한 안전성과 가용성을 높이기 위해 여러 지리적 위치에서 데이터를 저장합니다. 또한, AWS Backup Vault는 AWS 보안 기능과 통합하여 백업 데이터의 보안성을 보장합니다.
+
+- 요약하면, AWS Backup Vault는 AWS 클라우드에서 제공되는 다양한 서비스의 데이터를 쉽게 백업하고 보호할 수 있는 클라우드 백업 서비스입니다.
