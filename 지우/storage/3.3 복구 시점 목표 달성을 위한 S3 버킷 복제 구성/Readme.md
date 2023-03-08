@@ -229,4 +229,4 @@ aws s3api head-object --bucket src-bucket-ziwoo --key argo.png
 }
 ```
 
-<img src="https://user-images.githubusercontent.com/70079416/223650599-081ab133-eed3-4bc3-9628-bef9042bb36d.png" width="60%" height="60%">
+<img src="https://user-images.githubusercontent.com/70079416/223650599-081ab133-eed3-4bc3-9628-bef9042bb36d.png">
