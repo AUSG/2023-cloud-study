@@ -100,3 +100,37 @@ aws s3 cp ./argo.png s3://awscookbook306-$RANDOM_STRING
   - 고객 관리형 CMK, AWS 관리형 CMK
 - AWS 계정 및 리전에 따라 고유한 값을 지님
 - S3는 사용자 대신에 CMK를 사용할 수 있는 권한을 갖게 됨
+
+<br>
+
+**🥕 Demo**
+
+**⍢ KMS 키 생성**
+
+- Key Tag: `Name:S3Key`
+- alias: `s3key`
+
+<img src="https://user-images.githubusercontent.com/70079416/223654783-2ebff96a-569b-4934-a10a-682bbfbba9dc.png">
+
+<br>
+**⍢ Validation Check**
+
+암호 없이 객체 업로드 시도했을 때 뜨는 오류
+
+```bash
+
+aws s3 cp ./docker.png s3://src-bucket-ziwoo
+
+>> upload failed: ./docker.png to s3://src-bucket-ziwoo/docker.png An error occurred (KMS.NotFoundException) when calling the PutObject operation: Invalid keyId ${KEY_ID}
+```
+
+<br>
+암호와 함께 객체 업로드 후, 콘솔에서 업로드된 것 확인
+
+```bash
+aws s3 cp ./docker.png s3://src-bucket-ziwoo --sse aws:kms --sse-kms-key-id $KEY_ID
+
+>> upload: ./docker.png to s3://src-bucket-ziwoo/docker.png
+```
+
+<img src="https://user-images.githubusercontent.com/70079416/223654570-b2c1f677-557c-42da-887d-37b606600687.png">
