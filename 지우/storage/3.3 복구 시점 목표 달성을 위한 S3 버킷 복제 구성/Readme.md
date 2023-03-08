@@ -152,3 +152,81 @@ aws s3api put-bucket-replication \
 - CRR(Cross-Region Replication) : SRR과 동일한 복제 구성 사용, 추가적으로 아래 기능 구성 가능
   - 지역 간 데이터 저장 및 아카이브 요구 사항 충족
   - 지역적으로 더 가까운 데이터셋에 액세스해 대기 시간 감소
+
+<br>
+
+**🥕 Demo**
+
+- source bucket: `src-bucket-ziwoo`
+- destination bucket: `dst-bucket-ziwoo`
+
+```bash
+# console에서 src bucket, dst bucket 생성
+
+ROLE_ARN=$(aws iam create-role --role-name S3Role \
+	--assume-role-policy-document file://s3-assume-role-policy.json \
+	--output text --query Role.Arn)
+
+sed -e "s/DSTBUCKET/dst-bucket-ziwoo/g" \
+	-e "s|SRCBUCKET|src-bucket-ziwoo|g" \
+	s3-perms-policy-template.json > s3-perms-policy.json
+
+aws iam put-role-policy \
+	--role-name S3Role \
+	--policy-document file://s3-perms-policy.json \
+	--policy-name S3ReplicationPolicy
+
+sed -e "s|ROLEARN|${ROLE_ARN}|g" \
+	-e "s|DSTBUCKET|dst-bucket-ziwoo|g" \
+	s3-replication-template.json > s3-replication.json
+
+aws s3api put-bucket-replication \
+	--replication-configuration file://s3-replication.json \
+	--bucket src-bucket-ziwoo
+
+# validation check
+# src bucket의 복제 구성 확인
+aws s3api get-bucket-replication --bucket src-bucket-ziwoo
+
+# src bucket에 객체 복사
+aws s3 cp ./argo.png s3://src-bucket-ziwoo
+
+>> upload: ./argo.png to s3://src-bucket-ziwoo/argo.png
+
+# 객체의 복제 상태 확인
+aws s3api head-object --bucket src-bucket-ziwoo --key argo.png
+```
+
+<br>
+
+처음에는 `ReplicationStatus`가 `PENDING`으로 뜨지만, 시간이 지나면 `COMPLETED`로 변하고, 콘솔에서도 dst bucket에 복사된 것 확인
+
+```json
+{
+  "AcceptRanges": "bytes",
+  "LastModified": "2023-03-08T07:25:00+00:00",
+  "ContentLength": 87565,
+  "ETag": "\"63c1a6754d4dfe0c3d6a2fe0a970d2d1\"",
+  "VersionId": "3nojYjVHyk1TST8Q5627u9g2J61EGW0.",
+  "ContentType": "image/png",
+  "ServerSideEncryption": "AES256",
+  "Metadata": {},
+  "ReplicationStatus": "PENDING"
+}
+```
+
+```json
+{
+  "AcceptRanges": "bytes",
+  "LastModified": "2023-03-08T07:25:00+00:00",
+  "ContentLength": 87565,
+  "ETag": "\"63c1a6754d4dfe0c3d6a2fe0a970d2d1\"",
+  "VersionId": "3nojYjVHyk1TST8Q5627u9g2J61EGW0.",
+  "ContentType": "image/png",
+  "ServerSideEncryption": "AES256",
+  "Metadata": {},
+  "ReplicationStatus": "COMPLETED"
+}
+```
+
+<img src="https://user-images.githubusercontent.com/70079416/223650599-081ab133-eed3-4bc3-9628-bef9042bb36d.png" width="60%" height="60%">

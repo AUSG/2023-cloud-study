@@ -1,0 +1,30 @@
+{
+  "Rules": [
+    {
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": ""
+      },
+      "Destination": {
+        "Bucket": "arn:aws:s3:::dst-bucket-ziwoo",
+        "Metrics": {
+          "Status": "Enabled",
+          "EventThreshold": {
+            "Minutes": 15
+          }
+        },
+        "ReplicationTime": {
+          "Status": "Enabled",
+          "Time": {
+            "Minutes": 15
+          }
+        }
+      },
+      "DeleteMarkerReplication": {
+        "Status": "Disabled"
+      },
+      "Priority": 1
+    }
+  ],
+  "Role": "arn:aws:iam::944371408142:role/S3Role"
+}
