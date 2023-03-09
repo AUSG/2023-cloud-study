@@ -1,0 +1,30 @@
+{
+  "Rules": [
+    {
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": ""
+      },
+      "Destination": {
+        "Bucket": "arn:aws:s3:::cloudstudy-303-dst",
+        "Metrics": {
+          "Status": "Enabled",
+          "EventThreshold": {
+            "Minutes": 15
+          }
+        },
+        "ReplicationTime": {
+          "Status": "Enabled",
+          "Time": {
+            "Minutes": 15
+          }
+        }
+      },
+      "DeleteMarkerReplication": {
+        "Status": "Disabled"
+      },
+      "Priority": 1
+    }
+  ],
+  "Role": "arn:aws:iam::338995276158:role/AWSCookbook303S3Role"
+}
