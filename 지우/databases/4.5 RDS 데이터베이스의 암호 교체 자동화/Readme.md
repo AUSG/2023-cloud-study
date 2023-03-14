@@ -107,15 +107,15 @@ aws lambda add-permission --function-name $LAMBDA_ROTATE_ARN \
 	--principal secretsmanager.amazonaws.com
 ```
 
-    _(optional) 자동 비밀번호 교체를 위해 암호에 사용할 고유 접미사 설정 가능_
+_(optional) 자동 비밀번호 교체를 위해 암호에 사용할 고유 접미사 설정 가능_
 
-    ```bash
-    AWSCookbook405SecretName=AWSCookbook405Secret-$(aws secretsmanager \
-        get-random-password \
-        --exclude-punctuation \
-        --password-length 6 --require-each-included-type \
-        --output text --query RandomPassword)
-    ```
+```bash
+AWSCookbook405SecretName=AWSCookbook405Secret-$(aws secretsmanager \
+get-random-password \
+--exclude-punctuation \
+--password-length 6 --require-each-included-type \
+--output text --query RandomPassword)
+```
 
 ⑦ Secrets Manager에서 암호를 저장할 시크릿 생성
 
