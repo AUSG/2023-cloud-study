@@ -96,3 +96,35 @@ AWS Database Migration Service(AWS DMS) 는 관계형 데이터베이스, 데이
 ```
 
 # 4.8 RDS 데이터를 API를 사용해 Aurora Serverless에 대한 REST 액세스 활성화
+```
+aws cli를 통해 db에 쿼리를 날리기 위해서는  db의 serverless 클러스터에서 데이터 api를 활성화해야하고 rds의 data api를 사용할 수 있도록 EC2인스턴스의 IAM 역할에 정책을 추가해줘야함.
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "rds-data:BatchExecuteStatement",
+                "rds-data:BeginTransaction",
+                "rds-data:CommitTransaction",
+                "rds-data:ExecuteStatement",
+                "rds-data:RollbackTransaction"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+            ],
+            "Resource": "SecretArn",
+            "Effect": "Allow"
+        }
+    ]
+}
+하지만 ec2인스턴스에서 query를 날리기 위해선 secret arn이나 cluster arn, db name이 필요함.(secrets manager가 암호를 관리하도록 db를 설정해야함.)
+그리고 추가적으로 aurora serverless v2에 대한 http-endpoint를 enable하는 방법이 없음.
+https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/data-api.html#data-api.enabling
+안내문서에도 severless v1에 대한 설명만 존재! cli를 입력해도 false에서 true로 바뀌지 않음. 그리고 추가적으로 serverless 에서만 쿼리 편집기를 이용할 수 있고 데이터 api가 활성화되어야지만 그때서야 이용할 수 있음.
+```
