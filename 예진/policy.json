@@ -1,11 +1,15 @@
 {
-  "Statement": [
-    {
-      "Sid": "RestrictToOneBucket",
-      "Principal": "*",
-      "Action": ["s3:GetObject", "s3:PutObject"],
-      "Effect": "Allow",
-      "Resource": ["arn:aws:s3:::", "arn:aws:s3:::/*"]
-    }
-  ]
-}
+    "Version": "2012-10-17",
+    "Statement": [
+       {
+          "Effect": "Allow",
+          "Action": [
+              "rds-db:connect"
+          ],
+          "Resource": [
+              "arn:aws:rds-db:us-east-1:338995276158:dbuser:/db_user"
+          ]
+       }
+    ]
+ }
+ 
