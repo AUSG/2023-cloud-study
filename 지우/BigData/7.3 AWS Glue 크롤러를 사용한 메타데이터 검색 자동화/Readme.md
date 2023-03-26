@@ -15,7 +15,7 @@
 - Data Source : S3, Crawl all sub-folders
 
 <img src="https://user-images.githubusercontent.com/70079416/227789998-6265f1be-70b9-4b89-9abe-615d62540466.png" />
-<img src="https://user-images.githubusercontent.com/70079416/227790000-64d7afd1-3d2d-4cd1-98dd-b5168253c670.png" />
+<img src="https://user-images.githubusercontent.com/70079416/227790000-64d7afd1-3d2d-4cd1-98dd-b5168253c670.png" width=60% height=60% />
 
 - IAM Role 생성
 
@@ -26,6 +26,8 @@
 <img src="https://user-images.githubusercontent.com/70079416/227790517-475118e0-4ba5-4dc7-bf9b-550270ad194a.png" />
 
 ③ 탐색 메뉴 중 **[ Crawlers ]** → **[ Run ]** 클릭하여 크롤러 실행
+
+---
 
 **🥕 유효성 검사**
 
@@ -39,6 +41,8 @@ _state: running_
 
 _state: ready_
 
+<br>
+
 ⍢ CLI에서 다음 명령을 통해 `LastCrawl`의 `Status`가 `SUCCEEDED`임을 확인할 수 있다.
 
 ```bash
@@ -47,9 +51,9 @@ aws glue get-crawler --name crawler-ziwoo
 
 <img src="https://user-images.githubusercontent.com/70079416/227790522-a46d5a44-c996-439c-8e85-690dc14ff31d.png" />
 
-LastCrawl의 Status : SUCCEEDED
+<br>
 
-⍢ [ **View Log ]\*\*를 선택하면 Amazon CloudWatch에 기록된 로그를 확인할 수 있다.
+⍢ **[ View Log ]** 를 선택하면 Amazon CloudWatch에 기록된 로그를 확인할 수 있다.
 
 - 디버깅해야 하는 경우 `/aws-glue/crawlers` 로그 그룹에서 확인 가능
 - CLI 통해서도 확인 가능
