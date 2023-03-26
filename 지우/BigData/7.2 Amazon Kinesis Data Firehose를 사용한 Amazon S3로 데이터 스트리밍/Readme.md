@@ -5,6 +5,7 @@
 - 사전 준비 : Kinesis Data Stream(`kinesis-ziwoo`), S3 버킷에 업로드된 csv file(`kinesis-bucket-ziwoo`)
 
 <br>
+
 ① Kinesis Data Firehose console → **[ 전송 스트림 생성 ]** 클릭 → 소스 및 대상 선택
 
 <img src="https://user-images.githubusercontent.com/70079416/227789687-5361bafb-96fc-4c3d-97a7-c36b401971d4.png" />
