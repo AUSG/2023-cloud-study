@@ -8,23 +8,22 @@
 
 ① AWS Glue console → 탐색 메뉴 중 **[ Databases ]** → **[ Add database ]**
 
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%206.png)
+<img src="https://user-images.githubusercontent.com/70079416/227789995-a4a66cc3-dc7f-49e0-b7c2-cb9c605266fb.png" />
 
 ② 탐색 메뉴 중 **[ Tables ]** → **[ Add tables using crawler ]**
 
 - Data Source : S3, Crawl all sub-folders
 
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%207.png)
-
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%208.png)
+<img src="https://user-images.githubusercontent.com/70079416/227789998-6265f1be-70b9-4b89-9abe-615d62540466.png" />
+<img src="https://user-images.githubusercontent.com/70079416/227790000-64d7afd1-3d2d-4cd1-98dd-b5168253c670.png" />
 
 - IAM Role 생성
 
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%209.png)
+<img src="https://user-images.githubusercontent.com/70079416/227790515-373a4c90-bc91-4d0e-a5ef-46913349dc58.png" />
 
 - ①번에서 생성한 데이터베이스 연결, Crawler schedule: On-demand
 
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%2010.png)
+<img src="https://user-images.githubusercontent.com/70079416/227790517-475118e0-4ba5-4dc7-bf9b-550270ad194a.png" />
 
 ③ 탐색 메뉴 중 **[ Crawlers ]** → **[ Run ]** 클릭하여 크롤러 실행
 
@@ -32,13 +31,13 @@
 
 ⍢ State가 `Running`에서 `Ready`로 바뀌고 Last run이 `Succeeded`임을 확인할 수 있다.
 
-![state: running](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%2011.png)
+<img src="https://user-images.githubusercontent.com/70079416/227790519-ee6acfb9-37a6-4ae9-8ff8-0e936c686cf9.png" />
 
-state: running
+_state: running_
 
-![state: ready](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%2012.png)
+<img src="https://user-images.githubusercontent.com/70079416/227790521-1ccde38f-b526-4cae-93c3-cc9707a7b917.png" />
 
-state: ready
+_state: ready_
 
 ⍢ CLI에서 다음 명령을 통해 `LastCrawl`의 `Status`가 `SUCCEEDED`임을 확인할 수 있다.
 
@@ -46,7 +45,7 @@ state: ready
 aws glue get-crawler --name crawler-ziwoo
 ```
 
-![LastCrawl의 Status : SUCCEEDED](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%2013.png)
+<img src="https://user-images.githubusercontent.com/70079416/227790522-a46d5a44-c996-439c-8e85-690dc14ff31d.png" />
 
 LastCrawl의 Status : SUCCEEDED
 
@@ -58,6 +57,5 @@ LastCrawl의 Status : SUCCEEDED
   aws glue get-table --database-name db-ziwoo --name data
   ```
 
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%2014.png)
-
-![Untitled](7-1%20Big%20Data%20d7073282b0c34cb39c29b8da85e69387/Untitled%2015.png)
+<img src="https://user-images.githubusercontent.com/70079416/227790523-826b1480-26ea-4b0f-9f3c-79c6b74bc0eb.png" />
+<img src="https://user-images.githubusercontent.com/70079416/227790524-aebeb243-ff18-4b76-ab4a-1b8be9cba259.png" />
