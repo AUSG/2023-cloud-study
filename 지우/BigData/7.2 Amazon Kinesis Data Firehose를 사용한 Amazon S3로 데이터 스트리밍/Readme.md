@@ -30,6 +30,7 @@
 ② S3 버킷에 전송된 객체 및 내부 데이터 확인
 
 <img src="https://user-images.githubusercontent.com/70079416/227789694-87a069c9-7d9d-4a4b-a8f6-fe6651bd4b48.png" />
+<img src="https://user-images.githubusercontent.com/70079416/227789992-2fc3455e-61d4-4873-8add-d848d73e0b7f.png" />
 
 🥕 **참고**
 
